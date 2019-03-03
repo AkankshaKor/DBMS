@@ -42,21 +42,22 @@
 				</span>
 
 				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter username ">
-					<input class="input100" type="text" name="username" placeholder="username" pattern="[a-z0-9]{3,7}" >
+					<input class="input100" type="text" name="username" placeholder="username" pattern="[a-z@0-9]{3,9}" >
 					<span class="focus-input100"></span>
 				</div>
 
 
 				<div class="wrap-input100 validate-input m-b-25" data-validate = "Enter password">
-					<input class="input100" type="password" name="pass" placeholder="password" pattern="[A-Za-z0-9]{3,6}">
+					<input class="input100" type="password" name="pass" placeholder="password" pattern="[A-Za-z0-9]{3,9}">
 					<span class="focus-input100"></span>
 				</div>
 
 
 				<div class="wrap-input100 validate-input m-b-20">
-					<select class="input101" >
-				      <option>Receptionist</option>
+					<select name="selectt" class="input101" >
+				      <option>Receiptionist</option>
 				      <option>Doctor</option>
+						<option>Admin</option>
 				    </select>
 					<span class="focus-input100"></span>
 				</div>
@@ -65,7 +66,7 @@
 				</br>
 
 				<div class="container-login100-form-btn">
-					<button class="login100-form-btn">
+					<button class="login100-form-btn" name="submit" value="login">
 						Sign In
 					</button>
 				</div>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
+  <title>Doctor Panel</title>
+
+  <link rel="stylesheet" href="../static/dist/modules/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/dist/modules/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="../static/dist/modules/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+
+  <link rel="stylesheet" href="../static/dist/css/demo.css">
+  <link rel="stylesheet" href="../static/dist/css/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="main-wrapper">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <form class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="ion ion-navicon-round"></i></a></li>
+            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="ion ion-search"></i></a></li>
+          </ul>
+          <div class="search-element">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn" type="submit"><i class="ion ion-search"></i></button>
+          </div>
+        </form>
+        <ul class="navbar-nav navbar-right">
+          <form method="post" class="needs-validation" novalidate="" name="dashform" action="/dashform">
+          <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
+            <i class="ion ion-android-person d-lg-none"></i>
+              <div>HIII</div></a>
+
+            <div class="dropdown-menu dropdown-menu-right">
+              <a href="profile.html" class="dropdown-item has-icon">
+                <i class="ion ion-android-person"></i> Profile
+              </a>
+              <a href="{{ url_for('index')}}" class="dropdown-item has-icon">
+                <i class="ion ion-log-out"></i> Logout
+              </a>
+            </div>
+          </li>
+          </form>
+        </ul>
+
+      </nav>
+      <div class="main-sidebar">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="../templates/dashboard.html">Profile</a>
+          </div>
+          <div class="sidebar-user">
+            <div class="sidebar-user-picture">
+              <img alt="image" src="../static/dist/img/avatar/avatar-1.jpeg">
+            </div>
+            <div class="sidebar-user-details">
+              <div>HIII</div>
+              <div class="user-role">
+                Doctor
+              </div>
+            </div>
+          </div>
+          <ul class="sidebar-menu">
+
+            <li class="menu-header">Dashboard</li>
+            <form method="post" class="needs-validation" novalidate="" name="dashform" action="/dashboard">
+            <li>
+              <a href="{{ url_for('dash_board') }}" value="dash" name="submit"><i class="ion ion-speedometer"></i><span>Dashboard</span></a>
+            </li>
+            </form>
+            <form method="post" class="needs-validation" novalidate="" name="dashform" action="/dashboard">
+            <li class="active">
+              <a href="{{ url_for('dash_board') }}" value="doctor" name="submit"><i class="ion ion-clipboard"></i><span>Prescription</span></a>
+            </li>
+            </form>
+          </ul>
+
+
+
+
+
+
+        </aside>
+      </div>
+      <div class="main-content">
+        <section class="section">
+          <h1 class="section-header">
+            <div>Doctor's panel</div>
+          </h1>
+
+
+
+             <div class="row">
+            <div class="col-lg-5 col-md-12 col-12 col-sm-12">
+              <form method="post" class="needs-validation" novalidate="" action="/pres">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Prescription</h4>
+                  </div>
+                  <div class="card-body" id="printable">
+                    <div class="form-group">
+                      <label>Name</label>
+                      <select  name="patientname" class="card-body p-2 col-8">
+                        <option>  </option>
+                        {% for item in patient %}
+                      <option>{{ item[1] }}</option>
+                        {% endfor %}
+                      </select>
+                      <br>
+                      <label>Treatment</label>
+                      <input type="text" name="treatment" class="form-control" required>
+                      <label>Suggested tests</label>
+                      <input type="text" name="suggestedtests" class="form-control" required>
+                      <label>fees</label>
+                      <input type="text" name="fees" class="form-control" required>
+                      <label>Doctor</label>
+                      <select  name="doctor" class="card-body p-2 col-8">
+                      <option>General</option>
+                      <option>ENT</option>
+                      </select>
+                    </div>
+
+                  </div>
+                  <div class="card-footer">
+                    <button class="btn btn-primary" name="submit" value="save">Save</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+
+
+
+        </section>
+      </div>
+
+
+  <script src="../static/dist/modules/jquery.min.js"></script>
+  <script src="../static/dist/modules/popper.js"></script>
+  <script src="../static/dist/modules/tooltip.js"></script>
+  <script src="../static/dist/modules/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../static/dist/modules/nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="../static/dist/modules/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
+  <script src="../static/dist/js/sa-functions.js"></script>
+
+  <script src="../static/dist/js/scripts.js"></script>
+  <script src="../static/dist/js/custom.js"></script>
+  <script src="../static/dist/js/demo.js"></script>
+</body>
+</html>
